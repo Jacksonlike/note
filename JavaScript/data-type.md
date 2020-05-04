@@ -27,7 +27,7 @@
 
 - 有一定的精度范围
 
-- [`NaN`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN) ：表示不是一个数字，是一个**全局对象的属性**（ES5 以上中，`NaN` 是一个不可配置，不可写的属性）， ES3 中有被更改或者覆盖的可能。
+- [NaN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN) ：表示不是一个数字，是一个**全局对象的属性**（ES5 以上中，`NaN` 是一个不可配置，不可写的属性）， ES3 中有被更改或者覆盖的可能。
 
   ```javascript
   NaN === NaN;        // false
@@ -93,7 +93,7 @@
 
 <img src="../img/2.jpg" alt="转换规则" style="zoom:80%;" />
 
-### `typeof` 规则
+### typeof  规则
 
   ![typeof 转换规则](../img/3.png)
 
@@ -146,7 +146,6 @@
     // toString 
     // TypeError
     
-    
     var o = {
         valueOf : () => {console.log("valueOf"); return {}},
         toString : () => {console.log("toString"); return {}}
@@ -155,7 +154,6 @@
     // toString
     // valueOf
     // TypeError
-    
     
     var o = {
         valueOf : () => {console.log("valueOf"); return {}},
@@ -167,5 +165,5 @@
     // toPrimitive
     // hello
     ```
-
+    
     
