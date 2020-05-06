@@ -2,6 +2,7 @@
 - 数据库
   
    - [SQL 基础](MySQL/SQL)
+   - [SELECT 基础](MySQL/SELECT)
 - HTML
   
    - [基础知识](HTML/index)
