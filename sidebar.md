@@ -9,6 +9,8 @@
 - JavaScript
   
    - [数据类型](JavaScript/data-type)
+   - [关于对象](JavaScript/Object)
+   - [事件循环](JavaScript/event-loop)
 - CSS
    - [选择器](CSS/Selector)
 
