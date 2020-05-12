@@ -57,3 +57,51 @@ SELECT name, hp_max FROM heros ORDER BY hp_max DESC;
 SELECT name, hp_max FROM heros ORDER BY hp_max DESC LIMIT 5;
 ```
 
+### 统计记录数量
+
+```sql
+-- 查询所有记录的条数
+SELECT COUNT(*) FROM access_log; -- CONUT(1) 和 CONUT(*) 可以认为等效
+
+-- 查询websites 表中 alexa列中不为空的记录的条数
+SELECT COUNT(alexa) FROM websites;
+
+-- 查询websites表中 country列中不重复的记录条数
+SELECT COUNT(DISTINCT country) FROM websites;
+```
+
+
+
+## SELECT  顺序
+
+### 关键字顺序
+
+```sql
+SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ...
+```
+
+### 语句执行顺序
+
+```sql
+SELECT DISTINCT player_id, player_name, count(*) as num # 顺序 5
+FROM player JOIN team ON player.team_id = team.team_id # 顺序 1
+WHERE height > 1.80 # 顺序 2
+GROUP BY player.team_id # 顺序 3
+HAVING num > 2 # 顺序 4
+ORDER BY num DESC # 顺序 6
+LIMIT 2 # 顺序 7;
+
+FROM > WHERE > GROUP BY > HAVING > SELECT 的字段 > DISTINCT > ORDER BY > LIMIT
+```
+
+## Where 子句
+
+eg:
+
+```sql
+SELECT name, hp_max FROM heros WHERE hp_max > 6000;
+SELECT name, hp_max FROM heros WHERE hp_max BETWEEN 5399 AND 6811;
+SELECT name, hp_max FROM heros WHERE hp_max IS NULL;
+SELECT name, hp_max, mp_max FROM heros WHERE hp_max > 6000 AND mp_max > 1700 ORDER BY (hp_max+mp_max) DESC;
+```
+
