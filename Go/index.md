@@ -35,7 +35,7 @@ const (
 const (
 	Open = 1 << iota // 0b0001
     Close            // 0b0010
-    Pending          // 0b0111
+    Pending          // 0b0100
 )
 ```
 
@@ -127,7 +127,7 @@ const (
 - 不需要括弧
 
 - `for`
-    
+  
     ```go
     for j := 10; j <= 50; j++ {
         // ...
