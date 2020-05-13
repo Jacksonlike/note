@@ -5,7 +5,7 @@
    - [SELECT 基础](MySQL/SELECT)
 - Go 语言
    - [基础知识](Go/index.md)
-   - [数组和切片](Go/Arrary.md)
+   - [数组和切片](Go/Array.md)
    - [map](Go/Map.md)
 - HTML
   

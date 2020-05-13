@@ -106,7 +106,7 @@ const (
   const (
       Read    = 1 << iota // 0b0001
       Write               // 0b0010
-      Execute             // 0b0111
+      Execute             // 0b0100
   )
   
   a := 7
