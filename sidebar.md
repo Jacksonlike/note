@@ -7,6 +7,9 @@
    - [基础知识](Go/index.md)
    - [数组和切片](Go/Array.md)
    - [map](Go/Map.md)
+   - [字符串](Go/String.md)
+   - [包](Go/package.md)
+   - [协程](Go/Groutine.md)
 - HTML
   
    - [基础知识](HTML/index)
