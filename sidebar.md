@@ -19,7 +19,10 @@
    - [选择器](CSS/Selector)
 - HTTP
    - [HTTP发展史](HTTP/history)  
-   - [HTTP基础篇](HTTP/base)
+   - [HTTP基础篇](HTTP/base)  
+   - [HTTP请求方法](HTTP/method)
+   - [HTTP状态码](HTTP/statusCode)
+
 
 
 
