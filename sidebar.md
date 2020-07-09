@@ -16,6 +16,7 @@
   - [关于对象](JavaScript/Object)
   - [事件循环](JavaScript/event-loop)
   - [Symbol 类型](JavaScript/Symbol)
+  - [类型转换](JavaScript/type-conversion)
 - CSS
   - [选择器](CSS/Selector)
 - HTTP
