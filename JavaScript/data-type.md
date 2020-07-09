@@ -60,6 +60,10 @@
   Math.abs(0.1 + 0.2 - 0.3) <= Number.EPSILON // true
   ```
 
+- 舍入
+
+  ![舍入](../img/38.png)
+
 ## Symbol
 
 - 一切非字符串的对象 `key` 的集合
