@@ -45,3 +45,16 @@ alert(prices.orange); // 2
 - set.entries() —— 遍历并返回所有的实体（returns an iterable object for entries）[value, value]，它的存在也是为了兼容 Map。
 
 - 可以使用 for..of 或 forEach 来遍历 Set
+
+### WeakMap 与 WeakSet
+
+#### WeakMap 与 Map 区别
+
+- WeakMap 的键必须是对象，不能是原始值
+- WeakMap 不支持迭代以及 keys()，values() 和 entries() 方法。所以没有办法获取 WeakMap 的所有键或值。
+
+#### WeakSet 与 Set 区别
+
+- 只能向 WeakSet 添加对象（而不能是原始值）。
+- 对象只有在其它某个（些）地方能被访问的时候，才能留在 set 中。
+- 跟 Set 一样，WeakSet 支持 add，has 和 delete 方法，但不支持 size 和 keys()，并且不可迭代。
