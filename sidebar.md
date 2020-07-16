@@ -19,6 +19,7 @@
   - [类型转换](JavaScript/type-conversion)
   - [数组](JavaScript/arrary)
   - [可迭代对象](JavaScript/interable)
+  - [Map 和 Set](JavaScript/map-set)
 - CSS
   - [选择器](CSS/Selector)
 - HTTP
