@@ -20,6 +20,7 @@
   - [数组](JavaScript/arrary)
   - [可迭代对象](JavaScript/interable)
   - [Map 和 Set](JavaScript/map-set)
+  - [class](JavaScript/class)
 - CSS
   - [选择器](CSS/Selector)
 - HTTP
@@ -27,8 +28,3 @@
   - [HTTP基础篇](HTTP/base)  
   - [HTTP请求方法](HTTP/method)
   - [HTTP状态码](HTTP/statusCode)
-
-
-
-
-

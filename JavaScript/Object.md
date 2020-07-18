@@ -104,6 +104,7 @@ ES6 中提供的直接访问和操纵原型的方法：
 - `Object.create` 根据指定的原型创建新的对象，原型可以是 `null`
 - `Object.getPrototypeOf` 获得一个对象的原型
 - `Object.setPrototypeOf` 设置一个对象的原型
+- obj.hasOwnProperty(key) 如果 obj 拥有名为 key 的自身的属性（非继承而来的），则返回 true。
 
 ### 键值的获取
 
