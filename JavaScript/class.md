@@ -53,3 +53,72 @@ class MyClass {
   // ...
 }
 ```
+
+## 类继承
+
+### super
+
+- 执行 super.method(...) 来调用一个父类方法
+- 执行 super(...) 来调用一个父类 constructor（只能在我们的 constructor 中）
+- 箭头函数没有 super，如果被访问，它会从外部函数获取
+
+### 重写 constructor
+
+继承类的 constructor 必须调用 super(...)，并且一定要在使用 this 之前调用。原因如下：
+
+- 派生构造器具有特殊的内部属性 [[ConstructorKind]]:"derived"。这是一个特殊的内部标签
+- 当通过 new 执行一个常规函数时，它将创建一个空对象，并将这个空对象赋值给 this。
+- 但是当继承的 constructor 执行时，它不会执行此操作。它期望父类的 constructor 来完成这项工作。
+
+## 静态属性和静态方法
+
+```javascript
+class User {
+  static publisher = "Levi Ding";
+  static staticMethod() {
+    console.log(this === User);
+  }
+}
+
+User.staticMethod(); // true
+console.log( Article.publisher ); // Levi Ding
+```
+
+### 静态属性和方法是可被继承的
+
+```javascript
+class Animal {}
+class Rabbit extends Animal {}
+
+// 对于静态的
+alert(Rabbit.__proto__ === Animal); // true
+
+// 对于常规方法
+alert(Rabbit.prototype.__proto__ === Animal.prototype); // true
+```
+
+不过内建类没有静态方法继承。
+
+![40](../img/40.png)
+
+## instanceof
+
+instanceof 操作符用于检查一个对象是否属于某个特定的 class。同时，它还考虑了继承。
+
+obj instanceof Class 算法的执行过程大致如下：
+
+- 如果这儿有静态方法 Symbol.hasInstance，那就直接调用这个方法：
+
+```javascript
+// 设置 instanceOf 检查
+// 并假设具有 canEat 属性的都是 animal
+class Animal {
+  static [Symbol.hasInstance](obj) {
+    if (obj.canEat) return true;
+  }
+}
+
+let obj = { canEat: true };
+
+alert(obj instanceof Animal); // true：Animal[Symbol.hasInstance](obj) 被调用
+```
