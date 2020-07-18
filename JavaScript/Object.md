@@ -95,9 +95,8 @@ Object.keys(o); // ['a', 'b']
 
 ## JavaScript 的原型
 
-两句话概括：
-
 - 如果所有对象都有私有字段[[prototype]]，就是对象的原型
+- __proto__ 是 [[Prototype]] 的 getter/setter
 - 读一个属性，如果对象本身没有，则会继续访问对象的原型，直到原型为空或者找到为止
 
 ES6 中提供的直接访问和操纵原型的方法：
@@ -105,6 +104,13 @@ ES6 中提供的直接访问和操纵原型的方法：
 - `Object.create` 根据指定的原型创建新的对象，原型可以是 `null`
 - `Object.getPrototypeOf` 获得一个对象的原型
 - `Object.setPrototypeOf` 设置一个对象的原型
+
+### 键值的获取
+
+- 几乎所有其他键/值获取方法都忽略继承的属性
+- 例如 Object.keys 和 Object.values 等，都会忽略继承的属性。
+- 它们只会对对象自身进行操作。不考虑 继承自原型的属性。
+- for..in 循环在其自身和继承的属性上进行迭代。
 
 ## 对象分类
 
@@ -132,6 +138,7 @@ ES6 中提供的直接访问和操纵原型的方法：
 如果某个函数没有设置函数名，name 属性的值就是 `anonymous`，code 属性就是函数代码，以字符串的形式存储在内存。
 
 ## V8 如何存储对象
+
 > [博客](https://www.cnblogs.com/chargeworld/p/12236848.html)
 
 ### 排序属性和常规属性
@@ -215,3 +222,7 @@ let doublePrices = Object.fromEntries(
 
 alert(doublePrices.meat); // 8
 ```
+
+## Polyfilling
+
+Polyfilling 是一个术语，表示某个方法在 JavaScript 规范中已存在，但是特定的 JavaScript 引擎尚不支持该方法，那么我们可以通过手动实现它，并用以填充内建原型。
