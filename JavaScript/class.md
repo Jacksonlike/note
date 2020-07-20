@@ -99,7 +99,7 @@ alert(Rabbit.prototype.__proto__ === Animal.prototype); // true
 
 不过内建类没有静态方法继承。
 
-![40](../img/40.png)
+![41](../img/41.png)
 
 ## instanceof
 
