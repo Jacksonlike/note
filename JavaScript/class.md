@@ -122,3 +122,45 @@ let obj = { canEat: true };
 
 alert(obj instanceof Animal); // true：Animal[Symbol.hasInstance](obj) 被调用
 ```
+
+- typeof：用于原始数据类型，返回 string
+- {}.toString：用于原始数据类型，内建对象，包含 Symbol.toStringTag 属性的对象，返回 string
+- instanceof：用于对象，返回 true/false
+
+## Mixin
+
+mixin 是一个包含可被其他类使用而无需继承的方法的类。
+
+案例:
+
+```javascript
+let sayMixin = {
+  say(phrase) {
+    console.log(phrase);
+  }
+};
+
+let sayHiMixin = {
+  __proto__: sayMixin, // (或者，我们可以在这儿使用 Object.create 来设置原型)
+
+  sayHi() {
+    // 调用父类方法
+    super.say(`Hello ${this.name}`); // (*)
+  },
+  sayBye() {
+    super.say(`Bye ${this.name}`); // (*)
+  }
+};
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// 拷贝方法
+Object.assign(User.prototype, sayHiMixin);
+
+// 现在 User 可以打招呼了
+new User("Dude").sayHi(); // Hello Dude!
+```
