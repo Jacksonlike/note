@@ -79,3 +79,45 @@ new Promise(resolve => resolve(1))
 | - | - |
 | Promises 允许我们按照自然顺序进行编码 | 调用函数之前，就必须知道如何处理结果 |
 | 在 promise 上多次调用 .then。每次调用，我们都会在“订阅列表”中添加一个新的“分析”，一个新的订阅函数，也就是 Promise 链条 | 只能有一个回调 |
+
+## Promise API
+
+### Promise.all
+
+并行执行多个 promise，并等待所有 promise 都准备就绪。
+
+```javascript
+Promise.all([...promises...])
+```
+
+如果任意一个 promise 被 reject，由 Promise.all 返回的 promise 就会立即 reject，并且带有的就是这个 error。
+
+### Promise.allSettled
+
+Promise.allSettled 等待所有的 promise 都被 settle，无论结果如何。
+
+#### Polyfill
+
+```javascript
+if(!Promise.allSettled) {
+  Promise.allSettled = function(promises) {
+    return Promise.all(promises.map(p => Promise.resolve(p).then(value => ({
+      status: 'fulfilled',
+      value
+    }), reason => ({
+      status: 'rejected',
+      reason
+    }))));
+  };
+}
+```
+
+### Promise.race
+
+与 Promise.all 类似，但只等待第一个 settled 的 promise 并获取其结果（或 error）。
+
+### Promise.resolve/reject
+
+Promise.resolve(value) 用结果 value 创建一个 resolved 的 promise。
+
+Promise.reject(error) 用 error 创建一个 rejected 的 promise。
