@@ -22,6 +22,7 @@
   - [Map 和 Set](JavaScript/map-set)
   - [class](JavaScript/class)
   - [Promise](JavaScript/promise)
+  - [Proxy](JavaScript/proxy)
 - Vue
   - [基础](Vue/vue)
 - CSS
