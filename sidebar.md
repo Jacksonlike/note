@@ -23,6 +23,7 @@
   - [class](JavaScript/class)
   - [Promise](JavaScript/promise)
   - [Proxy](JavaScript/proxy)
+  - [Dom](JavaScript/dom)
 - Vue
   - [基础](Vue/vue)
 - CSS
