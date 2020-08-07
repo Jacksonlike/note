@@ -252,3 +252,60 @@ hidden 与 style="display:none" 做的是相同的事
 - elem.cloneNode(true) 具有所有特性（attribute）和子元素
 - elem.cloneNode(false) 不包括子元素
 
+## 样式和类
+
+### 管理class
+
+- className — 字符串值，可以很好地管理整个类的集合
+- classList — 具有 add/remove/toggle/contains 方法的对象，可以很好地支持单个类
+
+### 改变样式
+
+- style 属性是具有驼峰（camelCased）样式的对象
+- style.cssText 属性对应于整个 "style" 特性（attribute），即完整的样式字符串
+
+### 读取已经解析的样式
+
+- getComputedStyle(elem, [pseudo]) 返回与 style 对象类似的，且包含了所有类的对象。只读
+
+## 几何属性
+
+![几何属性](../img/50.png)
+
+- 属性 scrollLeft/scrollTop 是元素的隐藏、滚动部分的 width/height
+- 除了 scrollLeft/scrollTop 外，所有属性都是只读的。如果我们修改 scrollLeft/scrollTop，浏览器会滚动对应的元素
+
+### window 的宽高
+
+- window.innerWidth 整个窗口的宽度
+- document.documentElement.clientWidth 减去滚动条宽度后的窗口宽度
+
+在大多数情况下，我们需要 可用 的窗口宽度：以绘制或放置某些东西。也就是说：在滚动条内（如果有）。所以我们应该使用 documentElement.clientHeight/Width
+
+### 文档的 width/height
+
+可靠地获得完整的文档高度，我们应该采用以下这些属性的最大值：
+
+```js
+let scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+console.log('Full document height, with scrolled out part: ' + scrollHeight);
+```
+
+### 滚动
+
+- 获取页面当前滚动 window.pageXOffset/pageYOffset
+- 方法 scrollBy(x,y) 将页面滚动至 相对于当前位置的 (x, y) 位置
+  - 例如，scrollBy(0,10) 会将页面向下滚动 10px
+- 方法 scrollTo(pageX,pageY) 将页面滚动至 绝对坐标
+- elem.scrollIntoView(top) 将滚动页面以使 elem 可见
+  - 如果 top=true（默认值），页面滚动，使 elem 出现在窗口顶部。元素的上边缘与窗口顶部对齐
+  - 如果 top=false，页面滚动，使 elem 出现在窗口底部。元素的底部边缘与窗口底部对齐
+
+## 坐标
+
+![坐标](../img/51.png)
