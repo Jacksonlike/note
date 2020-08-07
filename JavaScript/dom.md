@@ -145,7 +145,7 @@ console.log( document.body instanceof Node ); // true
 console.log( document.body instanceof EventTarget ); // true
 ```
 
-### nodeType 
+### nodeType
 
 [nodeType](https://dom.spec.whatwg.org/#node) 属性提供了另一种“过时的”用来获取 DOM 节点类型的方法
 
@@ -213,3 +213,42 @@ textContent 允许以“安全方式”写入文本
 
 “hidden” 特性（attribute）和 DOM 属性（property）指定元素是否可见。
 hidden 与 style="display:none" 做的是相同的事
+
+## 修改文档
+
+### 创建元素
+
+- document.createElement(tag)
+- document.createTextNode(text)
+
+### 插入
+
+- node.append(...nodes or strings) — 在 node 末尾 插入节点或字符串
+- node.prepend(...nodes or strings) — 在 node 开头 插入节点或字符串
+- node.before(...nodes or strings) — 在 node 前面 插入节点或字符串
+- node.after(...nodes or strings) — 在 node 后面 插入节点或字符串
+- node.replaceWith(...nodes or strings) — 将 node 替换为给定的节点或字符串
+
+![插入节点](../img/48.png)
+
+- elem.insertAdjacentHTML(where, html)
+  - "beforebegin" — 将 html 插入到 elem 前插入
+  - "afterbegin" — 将 html 插入到 elem 开头
+  - "beforeend" — 将 html 插入到 elem 末尾
+  - "afterend" — 将 html 插入到 elem 后
+- elem.insertAdjacentText(where, text)
+- elem.insertAdjacentElement(where, elem)
+
+![插入节点](../img/49.png)
+
+### 移除
+
+- node.remove()
+
+如果我们要将一个元素 移动 到另一个地方，则无需将其从原来的位置中删除，**所有插入方法都会自动从旧位置删除该节点**
+
+### 克隆节点
+
+- elem.cloneNode(true) 具有所有特性（attribute）和子元素
+- elem.cloneNode(false) 不包括子元素
+
