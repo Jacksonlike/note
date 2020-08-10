@@ -24,6 +24,7 @@
   - [Promise](JavaScript/promise)
   - [Proxy](JavaScript/proxy)
   - [Dom](JavaScript/dom)
+  - [事件](JavaScript/event)
 - Vue
   - [基础](Vue/vue)
 - CSS
