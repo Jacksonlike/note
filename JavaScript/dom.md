@@ -309,3 +309,4 @@ console.log('Full document height, with scrolled out part: ' + scrollHeight);
 ## 坐标
 
 ![坐标](../img/51.png)
+![坐标](../img/55.png)

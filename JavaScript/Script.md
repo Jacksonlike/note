@@ -12,7 +12,7 @@
 
   ```html
   <!-- 引用办法 -->
-  <script type="module" src="xxxxx.js"></script> 
+  <script type="module" src="xxxxx.js"></script>
   ```
 
   - 包含语句、import 声明，export 声明

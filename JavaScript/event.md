@@ -36,7 +36,7 @@
 - options
   - once：如果为 true，那么会在被触发后自动删除监听器
   - capture：事件处理的阶段。由于历史原因，options 也可以是 false/true，它与 {capture: false/true} 效果相同
-  - passive：如果为 true，那么处理程序将不会调用 preventDefault()
+  - passive：如果为 true，那么处理程序将不会调用 preventDefault()，这项配置可以减少浏览器不必要的延迟和“抖动”
 
 对于某些事件，只能通过 addEventListener 设置处理程序，例如，DOMContentLoaded 事件，该事件在文档加载完成并且 DOM 构建完成时触发
 
@@ -79,3 +79,73 @@ DOM 事件标准描述了事件传播的 3 个阶段：
 ## 浏览器默认行为
 
 许多事件会自动触发浏览器执行某些行为
+
+### 阻止浏览器行为
+
+- event.preventDefault
+- 如果处理程序是使用 `on<event>`（而不是 addEventListener）分配的，那返回 false 也同样有效
+
+### event.defaultPrevented
+
+如果默认行为被阻止，那么 event.defaultPrevented 属性为 true，否则为 false
+
+## 自定义事件
+
+`let event = new Event(type[, options]);`
+
+- type —— 事件类型
+- options —— 具有两个可选属性的对象
+  - bubbles: true/false —— 如果为 true，那么事件会冒泡
+  - cancelable: true/false —— 如果为 true，那么“默认行为”可以被阻止
+  - 默认情况下，以上两者都为 false：{bubbles: false, cancelable: false}
+
+### dispatchEvent
+
+elem.dispatchEvent(event) 可以触发元素上的事件
+
+#### event.isTrusted
+
+对于来自真实用户操作的事件，event.isTrusted 属性为 true，对于脚本生成的事件，event.isTrusted 属性为 false
+
+## UI事件
+
+### 鼠标事件 - event.button
+
+![event.button](../img/53.png)
+
+### 组合键
+
+所有的鼠标事件都包含有关按下的组合键的信息,如果在事件期间按下了相应的键，则它们为 true
+
+- event.shiftKey：Shift
+- event.altKey：Alt（或对于 Mac 是 Opt）
+- event.ctrlKey：Ctrl
+- event.metaKey：对于 Mac 是 Cmd
+
+### 坐标
+
+所有的鼠标事件都提供了两种形式的坐标：
+
+- 相对于窗口的坐标：clientX 和 clientY
+- 相对于文档的坐标：pageX 和 pageY
+
+### mouseover/mouseout 与 relatedTarget
+
+![mouseover/mouseout](../img/54.png)
+
+#### mouseover
+
+- event.target —— 是鼠标移过的那个元素
+- event.relatedTarget —— 是鼠标来自的那个元素（relatedTarget → target）
+
+#### mouseout
+
+- event.target —— 是鼠标离开的元素
+- event.relatedTarget —— 是鼠标移动到的，当前指针位置下的元素（target → relatedTarget）
+
+> relatedTarget 可以为 null，如果 mouseover 被触发了，则必须有 mouseout
+
+### mouseenter 和 mouseleave
+
+- 元素内部与后代之间的转换不会产生影响
+- 事件 mouseenter/mouseleave 不会冒泡
