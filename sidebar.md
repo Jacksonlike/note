@@ -9,6 +9,11 @@
   - [字符串](Go/String.md)
   - [包](Go/package.md)
   - [协程](Go/Groutine.md)
+- HTTP
+  - [HTTP发展史](HTTP/history)  
+  - [HTTP基础篇](HTTP/base)  
+  - [HTTP请求方法](HTTP/method)
+  - [HTTP状态码](HTTP/statusCode)
 - HTML
   - [基础知识](HTML/index)
 - JavaScript
@@ -29,8 +34,4 @@
   - [基础](Vue/vue)
 - CSS
   - [选择器](CSS/Selector)
-- HTTP
-  - [HTTP发展史](HTTP/history)  
-  - [HTTP基础篇](HTTP/base)  
-  - [HTTP请求方法](HTTP/method)
-  - [HTTP状态码](HTTP/statusCode)
+- 浏览器
