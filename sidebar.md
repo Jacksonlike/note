@@ -35,3 +35,5 @@
 - CSS
   - [选择器](CSS/Selector)
 - 浏览器
+  - [生命周期](Browser/lifecircle)
+  - [async 和 defer](Browser/script)
