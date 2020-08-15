@@ -37,3 +37,6 @@
 - 浏览器
   - [生命周期](Browser/lifecircle)
   - [async 和 defer](Browser/script)
+  - [二进制数据](Browser/binary)
+  - [存储数据](Browser/save-data)
+  - [动画](Browser/animation)
