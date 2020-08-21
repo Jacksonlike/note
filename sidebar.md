@@ -40,4 +40,4 @@
   - [二进制数据](Browser/binary)
   - [存储数据](Browser/save-data)
   - [动画](Browser/animation)
-  - [工作原理 1](Browser/working-principle)
+  - [工作原理-笔记1](Browser/working-principle)
