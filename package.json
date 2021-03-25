@@ -1,5 +1,15 @@
 {
+  "type": "module",
   "scripts": {
-    "start": "docsify serve"
+    "start": "docsify serve",
+    "build": "node buildSidebar.js",
+    "git-add": "git add sidebar.md"
+  },
+  "pre-commit": [
+    "build",
+    "git-add"
+  ],
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
   }
 }

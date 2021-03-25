@@ -35,7 +35,7 @@ const fileHandle = (filePath) => {
   if (!name.endsWith('.md') || testNames(ignoreFiles, name)) {
     return;
   }
-  generateOneTag(name.split('.')[0], filePath);
+  generateOneTag(name.split('.')[1], filePath);
 };
 
 const dirHandle = (dirPath) => {
