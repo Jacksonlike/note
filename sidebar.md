@@ -1,4 +1,5 @@
 - [前言](/)
+- bin
 - Browser
   - [动画](Browser/1.动画)
   - [二进制数据](Browser/2.二进制数据)
@@ -6,7 +7,6 @@
   - [浏览器工作原理](Browser/4.浏览器工作原理)
   - [数据存储](Browser/5.数据存储)
   - [页面生命周期](Browser/6.页面生命周期)
-- CSS
 - Git
   - [常见方法备忘](Git/1.常见方法备忘)
 - Go
@@ -48,6 +48,6 @@
   - [INSERT](MySQL/1.INSERT)
   - [SELECT](MySQL/2.SELECT)
   - [SQL](MySQL/3.SQL)
-- React
-- Server
-- Vue
+- shell
+  - [npm和yarn](shell/1.npm和yarn)
+  - [git](shell/2.git)
