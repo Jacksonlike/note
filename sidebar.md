@@ -1,5 +1,4 @@
 - [前言](/)
-- bin
 - Browser
   - [动画](Browser/1.动画)
   - [二进制数据](Browser/2.二进制数据)
@@ -51,3 +50,6 @@
 - shell
   - [npm和yarn](shell/1.npm和yarn)
   - [git](shell/2.git)
+- webpack
+  - [核心概念](webpack/1.核心概念)
+  - [API](webpack/2.API)
