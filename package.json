@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "dev": "docsify serve",
     "start": "docsify serve",
     "build": "node buildSidebar.js",
     "git-add": "git add sidebar.md"
